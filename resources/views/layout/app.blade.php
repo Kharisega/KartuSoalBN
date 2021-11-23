@@ -34,12 +34,22 @@
                 <div class="sidebar-heading border-bottom bg-dark text-light">Kartu Soal</div>
                 <hr>
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Dashboard</a>
-                    <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Shortcuts</a>
-                    <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Overview</a>
-                    <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Events</a>
-                    <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Profile</a>
-                    <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Log Out</a>
+                    @if(Auth::user()->roles[0]['name'] == 'admin')
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Dashboard</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="{{ route('guru.index') }}">Data Guru</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="{{ route('mapel.index') }}">Data Mata Pelajaran</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="{{ route('kelas.index') }}">Data Kelas</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="{{ route('jurusan.index') }}">Data Kompetensi Keahlian</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="{{ route('kode.index') }}">Data Kompetensi Dasar</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Log Out</a>
+                    @elseif(Auth::user()->roles[0]['name'] == 'guru')
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Dashboard</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Kartu Soal</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Overview</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Events</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Profile</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Log Out</a>
+                    @endif
                 </div>
             </div>
             <!-- Page content wrapper-->

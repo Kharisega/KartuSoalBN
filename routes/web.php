@@ -20,3 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//! Route khusus untuk Admin
+Route::middleware('role:admin')->resource('guru', 'GuruController');    
+Route::middleware('role:admin')->resource('kelas', 'KelasController');    
+Route::middleware('role:admin')->resource('jurusan', 'JurusanController');    
+Route::middleware('role:admin')->resource('mapel', 'MapelController');
+
+Route::get('/kode', 'KodeController@index')->name('kode.index');
+Route::post('/kode/import_excel', 'KodeController@import_excel');
