@@ -16,6 +16,8 @@ class CreateTableKartuSoal extends Migration
         Schema::create('kartu_soal', function (Blueprint $table) {
             $table->id('id_kartu');
             $table->integer('id_soal');
+            $table->integer('kd_pengetahuan');
+            $table->integer('kd_keterampilan');
             $table->string('materi');
             $table->string('nama_mapel');
             $table->string('indikator_soal');

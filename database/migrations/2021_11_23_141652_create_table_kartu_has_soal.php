@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableKompetensiDasar extends Migration
+class CreateTableKartuHasSoal extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateTableKompetensiDasar extends Migration
      */
     public function up()
     {
-        Schema::create('kompetensi_dasar', function (Blueprint $table) {
-            $table->id('id_kd');
-            $table->string('kode_kd');
-            $table->string('ket_kd');
-            $table->string('nama_mapel');
-            $table->string('jenis_kd');
+        Schema::create('kartu_has_soal', function (Blueprint $table) {
+            $table->integer('id_kartu');
+            $table->integer('id_soal');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateTableKompetensiDasar extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_kompetensi_dasar');
+        Schema::dropIfExists('table_kartu_has_soal');
     }
 }

@@ -41,13 +41,12 @@
                         <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="{{ route('kelas.index') }}">Data Kelas</a>
                         <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="{{ route('jurusan.index') }}">Data Kompetensi Keahlian</a>
                         <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="{{ route('kode.index') }}">Data Kompetensi Dasar</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="{{ route('kognitif.index') }}">Data Aspek Kognitif</a>
                         <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Log Out</a>
                     @elseif(Auth::user()->roles[0]['name'] == 'guru')
                         <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Dashboard</a>
-                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Kartu Soal</a>
-                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Overview</a>
-                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Events</a>
-                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Profile</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Profil Guru</a>
+                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="{{ route('kartu.index') }}">Kartu Soal</a>
                         <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Log Out</a>
                     @endif
                 </div>
