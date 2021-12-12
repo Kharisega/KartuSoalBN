@@ -12,6 +12,7 @@ class Soal extends Model
         'no_soal',
         'soalpil',
         'soalessay',
+        'gambar',
         'pilgan_a',
         'pilgan_b',
         'pilgan_c',

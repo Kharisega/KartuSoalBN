@@ -22,19 +22,37 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>ID Guru</th>
-            <th>Nama Guru</th>
+            <th>ID Kartu</th>
+            <th>ID Soal</th>
+            <th>Materi</th>
             <th>Mata Pelajaran</th>
             <th>Kelas</th>
+            <th>Jurusan</th>
+            <th>Indikator Soal</th>
+            <th>Jenis Soal</th>
+            <th>Aspek Kognitif</th>
+            <th>Kompetensi Dasar</th>
             <th>Aksi</th>
         </tr>
-        {{-- @foreach ($kartu as $i => $kartuu)
+        @foreach ($kartu as $i => $kartuu)
             <tr>
                 <td>{{ ++$i }}</td>
                 <td>{{ $kartuu->id_kartu }}</td>
-                <td>{{ $kartuu->nama }}</td>
+                <td>{{ $kartuu->id_soal }}</td>
+                <td>{{ $kartuu->materi }}</td>
                 <td>{{ $kartuu->nama_mapel }}</td>
                 <td>{{ $kartuu->kelas }}</td>
+                <td>{{ $kartuu->jurusan }}</td>
+                <td>{{ $kartuu->indikator_soal }}</td>
+                <td>{{ $kartuu->jenis_soal }}</td>
+                <td>{{ $kartuu->aspek_kognitif }}</td>
+                <td>
+                    @foreach ($kd as $item)
+                        @if ($item->id_kartu == $kartuu->id_kartu)
+                            {{ $item->kode_kd . ' ' . $item->ket_kd }}
+                        @endif
+                    @endforeach
+                </td>
                 <td>
                     <form action="{{ route('kartu.destroy', $kartuu->id_kartu) }}" method="POST">
                         <a href="{{ route('kartu.edit',$kartuu->id_kartu) }}" class="btn btn-primary">Edit</a>
@@ -47,7 +65,7 @@
                     </form>
                 </td>
             </tr>
-            @endforeach --}}
+        @endforeach
     </table>
 </div>
 @endsection

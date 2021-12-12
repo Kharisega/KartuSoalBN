@@ -67,7 +67,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Kompetensi Dasar Pengetahuan :</strong>
-                <select class="form-select" name="id_kd_peng" id="id_kd_peng">
+                <select class="form-select" name="id_kd[]" id="id_kd[]">
+                        <option value="">Kompetensi Dasar Pengetahuan</option>
                     @foreach ($pengetahuan as $peng)
                         <option value="{{ $peng->id_kd }}">{{ $peng->kode_kd . ' ' . $peng->ket_kd }}</option>
                     @endforeach
@@ -77,7 +78,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Kompetensi Dasar Keterampilan :</strong>
-                <select class="form-select" name="id_kd_ket" id="id_kd_ket">
+                <select class="form-select" name="id_kd[]" id="id_kd[]">
+                    <option value="">Kompetensi Dasar Keterampilan</option>
                     @foreach ($keterampilan as $ket)
                         <option value="{{ $ket->id_kd }}">{{ $ket->kode_kd . ' ' . $ket->ket_kd }}</option>
                     @endforeach
